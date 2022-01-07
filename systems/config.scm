@@ -33,10 +33,11 @@
   (bootloader
     (bootloader-configuration
       (bootloader grub-bootloader)
-      (target "/dev/sda")
+      (targets (list "/dev/sda"))
       (keyboard-layout keyboard-layout)))
   (swap-devices
-    (list (uuid "2cb4b997-8b28-4a30-9bcb-e042ad48c964")))
+   (list (swap-space
+	  (target (uuid "2cb4b997-8b28-4a30-9bcb-e042ad48c964")))))
   (file-systems
     (cons* (file-system
              (mount-point "/")
