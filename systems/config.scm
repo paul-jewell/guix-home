@@ -1,5 +1,6 @@
-;; This is an operating system configuration generated
-;; by the graphical installer.
+;; System configuration for qemu based guix system
+;; Hostname: mercury
+;; Developed from the system generated config.
 
 (use-modules (gnu))
 (use-service-modules desktop networking ssh xorg)
@@ -19,7 +20,9 @@
                 %base-user-accounts))
   (packages
     (append
-      (list (specification->package "nss-certs"))
+     (list (specification->package "nss-certs")
+	   (specification->package "emacs")
+	   (specification->package "git"))
       %base-packages))
   (services
     (append
