@@ -15,5 +15,5 @@
 	     (guix-defaults? #t)
 	     (environment-variables
 	      '(("XDG_CACHE_HOME" . "~/.cache")
-		("HISTFILE" . "$XDG_CACHE_HOME/.bash_history"))))))))		 
-		 
+		("HISTFILE" . "$XDG_CACHE_HOME/.bash_history"))))))))
+
