@@ -2,7 +2,12 @@
 ;; Hostname: mercury
 ;; Developed from the system generated config.
 
-(use-modules (gnu))
+(use-modules (gnu)
+	     (gnu packages admin)
+	     (gnu packages certs)
+	     (gnu packages emacs)
+	     (gnu packages version-control))
+
 (use-service-modules desktop networking ssh xorg)
 
 (operating-system
@@ -20,9 +25,9 @@
                 %base-user-accounts))
   (packages
     (append
-     (list (specification->package "nss-certs")
-	   (specification->package "emacs")
-	   (specification->package "git"))
+     (list nss-certs
+	   emacs
+	   git)
       %base-packages))
   (services
     (append
