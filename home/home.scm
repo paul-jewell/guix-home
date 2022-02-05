@@ -34,6 +34,7 @@
     "emacs"
     "emacs-use-package"
     "emacs-no-littering"
+    "emacs-popup"
     "emacs-ivy"
     "emacs-ivy-hydra"
     "emacs-ivy-rich"
@@ -60,7 +61,7 @@
     "emacs-company-irony"
     "emacs-irony-mode"
     "emacs-irony-eldoc"
-    "emacs-company-jedi"
+    "emacs-jedi"
     "emacs-magit"
     "emacs-git-gutter"
     "emacs-git-timemachine"
@@ -74,9 +75,11 @@
     "emacs-diminish"
     "emacs-paredit"
     ;;"emacs-paredit-everywhere"
-    "emacs-rainbow-delimiters"
+    ;; "emacs-rainbow-delimiters"
+
+    "emacs-clojure-mode"
     "emacs-cider"
-    ;;"emacs-cider-hydra"
+    ;; "emacs-cider-hydra"
     "emacs-slime"
     "emacs-elisp-slime-nav"
     "mu"
@@ -99,7 +102,14 @@
 
 (define %programming
   (list
-   "sbcl"))
+   "gcc-toolchain"
+   "make"
+   "pkg-config"
+   "texinfo"
+   "sbcl"
+   "curl"
+   "clojure"
+   "clojure-tools"))
 
 (define %fonts
   (list
@@ -133,7 +143,8 @@
 	          (environment-variables
 	           '(("XDG_CACHE_HOME" . "~/.cache")
 		          ("INPUTRC" . "~/.inputrc")
-		          ("HISTFILE" . "$XDG_CACHE_HOME/.bash_history")))))
+		          ("HISTFILE" . "$XDG_CACHE_HOME/.bash_history")
+                ("EDITOR" . "emacs")))))
 
    (service home-shepherd-service-type
             (home-shepherd-configuration
